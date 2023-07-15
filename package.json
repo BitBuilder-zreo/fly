@@ -1,0 +1,16 @@
+{
+    "name": "v-fly",
+    "version": "1.0.0",
+    "description": "Vue + Vite + TypeScript ",
+    "keywords": [
+        "v-fly",
+        "vite",
+        "vue",
+        "typescript"
+    ],
+    "author": "Gemini",
+    "license": "MIT",
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {}
+}
