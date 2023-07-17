@@ -1,0 +1,26 @@
+{
+    "name": "@vfly/vite-config",
+    "version": "1.0.0",
+    "private": true,
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ]
+}
