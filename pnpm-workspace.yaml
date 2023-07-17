@@ -1,0 +1,7 @@
+# pnpm-workspace.yaml
+
+packages:
+  - 'configs/*'       # 包含工作区中的所有包
+
+# exclude:
+#   - packages/ignore-package   # 如果你想排除特定的包，可以使用 exclude 字段
