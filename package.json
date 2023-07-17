@@ -10,7 +10,16 @@
     ],
     "author": "Gemini",
     "license": "MIT",
-    "scripts": {},
+    "scripts": {
+        "bootstrap": "pnpm i --shamefully-hoist",
+        "dev": "pnpm run  vite",
+        "build": "pnpm run vite build"
+    },
     "dependencies": {},
-    "devDependencies": {}
+    "devDependencies": {
+        "@vfly/vite-config": "workspace:*",
+        "@vfly/ts-config": "workspace:*",
+        "@vfly/eslint-config": "workspace:*",
+        "@vfly/stylelint-config": "workspace:*"
+    }
 }

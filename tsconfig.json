@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "@vfly/ts-config/vue-app.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "types": [
+            "vite/client"
+        ],
+        "paths": {
+            "/@/*": [
+                "src/*"
+            ],
+            "/#/*": [
+                "types/*"
+            ],
+            "@/*": [
+                "src/*"
+            ],
+            "#/*": [
+                "types/*"
+            ]
+        }
+    },
+    "include": [
+        "tests/**/*.ts",
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "types/**/*.d.ts",
+        "types/**/*.ts",
+        "build/**/*.ts",
+        "build/**/*.d.ts",
+        "mock/**/*.ts",
+        "vite.config.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "tests/server/**/*.ts",
+        "dist",
+        "**/*.js"
+    ]
+}
+/*
+"$schema": "https://json.schemastore.org/tsconfig"：指定 JSON 文件的模式（schema），用于验证 tsconfig.json 文件的正确性。
+
+"extends": "@vfly/ts-config/vue-app.json"：这个配置文件继承了一个名为 @vfly/ts-config/vue-app.json 的配置文件，因此此文件中的设置将继承 @vben/ts-config/vue-app.json 中的设置，并可能进行一些覆盖或扩展。
+
+"compilerOptions"：这是一个对象，包含了各种编译器选项的配置。
+
+"baseUrl": "."：指定解析非相对模块名的基本目录为当前目录。
+
+"types": ["vite/client"]：指定要包含的默认类型声明文件。在此例中，包含了 vite/client，表示 TypeScript 将使用 Vite 客户端类型声明。
+
+"paths"：这个属性用于配置模块解析的路径映射，允许在导入模块时使用别名。
+
+"include"：指定应该包含在编译中的文件或文件夹。在此例中，包含了 TypeScript 源代码文件、类型声明文件、测试文件以及 Vite 配置文件。
+
+"exclude"：排除在编译过程中不需要包含的文件或文件夹。在此例中，排除了 node_modules 文件夹、测试服务器文件、编译输出目录 dist 以及所有的 JavaScript 文件。
+
+该配置文件用于一个 Vue.js 应用程序，它继承了 @vfly/ts-config/vue-app.json 中的设置，并设置了模块解析的别名映射，指定了编译过程中包含和排除的文件
+*/
