@@ -11,8 +11,6 @@
         "build": "vite build",
         "serve": "vite preview"
     },
-    "dependencies": {},
-    "devDependencies": {},
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
@@ -22,5 +20,12 @@
     },
     "files": [
         "dist"
-    ]
+    ],
+    "dependencies": {
+        "vite": "^4.4.4"
+    },
+    "devDependencies": {
+        "unbuild": "^1.2.1",
+        "vite-plugin-compression": "^0.5.1"
+    }
 }
