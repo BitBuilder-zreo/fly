@@ -1,0 +1,16 @@
+{
+    "name": "@vfly/ts-config",
+    "version": "1.0.0",
+    "private": true,
+    "license": "MIT",
+    "files": [
+        "base.json",
+        "node.json",
+        "node-server.json",
+        "vue-app.json"
+    ],
+    "dependencies": {
+        "@types/node": "^20.4.2",
+        "vite": "^4.4.4"
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Base",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "strict": true,
+        "declaration": true,
+        "noImplicitOverride": true,
+        "noUnusedLocals": true,
+        "esModuleInterop": true,
+        "useUnknownInCatchVariables": false,
+        "composite": false,
+        "declarationMap": false,
+        "forceConsistentCasingInFileNames": true,
+        "inlineSources": false,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "noUnusedParameters": false,
+        "preserveWatchOutput": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "removeComments": true
+    },
+    "exclude": [
+        "**/node_modules/**",
+        "**/dist/**"
+    ]
+}
+/*
+"$schema": "https://json.schemastore.org/tsconfig"：指定 JSON 文件的模式（schema），用于验证 tsconfig.json 文件的正确性。
+
+"display": "Base"：此属性是自定义的，用于描述该配置的显示名称。
+
+"compilerOptions"：这是一个对象，包含了各种编译器选项的配置。
+
+"target": "ESNext"：指定将 TypeScript 编译为的 ECMAScript 目标版本。在此例中，编译器将目标设置为最新的 ESNext 版本。
+
+"module": "ESNext"：指定生成的模块代码的模块系统。此处设置为 ESNext，表示生成的代码将使用最新的 ECMAScript 模块系统。
+
+"moduleResolution": "node"：指定在查找模块时使用的模块解析策略。此处设置为 node，表示使用 Node.js 的模块解析策略。
+
+"strict": true：启用所有严格的类型检查选项。这将提供更严格的类型检查，并帮助捕获潜在的错误。
+
+"declaration": true：生成相应的 .d.ts 声明文件，用于支持类型定义的自动补全。这在构建可重用的 TypeScript 库时非常有用。
+
+"noImplicitOverride": true：阻止意外地重写父类或接口的方法。当启用时，TypeScript 编译器将强制要求使用 override 关键字来明确指示方法的重写。
+
+"noUnusedLocals": true：报告未使用的局部变量错误。这有助于提醒你删除未使用的变量，以保持代码的清洁性和可维护性。
+
+"esModuleInterop": true：允许以 ES 模块的形式导入 CommonJS 模块。这使得在 TypeScript 项目中使用 CommonJS 模块时更加方便。
+
+"useUnknownInCatchVariables": false：在 catch 语句中捕获未知错误类型时不使用 unknown 类型。如果启用，TypeScript 编译器会将捕获的错误类型推断为 unknown，而不是默认的 any 类型。
+
+"composite": false：不将项目视为复合项目，这在工作区（monorepo）中很有用。复合项目是指由多个子项目组成的项目，每个子项目都可以独立编译。
+
+"declarationMap": false：是否生成 .d.ts.map 声明文件映射。如果启用，编译器将为生成的 .d.ts 文件生成相应的 .d.ts.map 文件，以支持调试和源映射。
+
+"forceConsistentCasingInFileNames": true：确保文件名的一致性，防止文件名大小写问题导致引入问题。如果启用，TypeScript 编译器将要求文件名与导入语句的实际文件名完全一致。
+
+"inlineSources": false：是否将源码嵌入到源映射中。如果启用，编译器将在源映射中嵌入源代码，以便在调试器中查看源代码。
+
+"isolatedModules": true：每个文件作为单独的模块处理，提高编译性能。这个选项将文件视为独立的模块，而不考虑全局的模块作用域。
+
+"skipLibCheck": true：跳过声明文件的类型检查，可提高编译速度。当你使用大量的第三方声明文件时，启用此选项可以减少编译时间。
+
+"noUnusedParameters": false：是否报告未使用的函数参数错误。如果启用，TypeScript 编译器会警告未使用的函数参数，以帮助你发现和删除未使用的参数。
+
+"preserveWatchOutput": true：保留 TypeScript 监视模式输出的文件。当启用监视模式时，编译器将保留输出文件，而不会删除它们。
+
+"experimentalDecorators": true：启用实验性的装饰器特性。装饰器是一种用于修改类、方法或属性行为的特殊语法。
+
+"resolveJsonModule": true：允许导入 .json 文件作为模块。当启用此选项时，你可以像导入其他模块一样导入和使用 .json 文件。
+
+"removeComments": true：在输出的 JavaScript 文件中移除注释。如果启用，TypeScript 编译器将从生成的 JavaScript 代码中移除所有注释。
+
+"exclude": ：排除在编译过程中不需要包含的文件或文件夹。在此例中，排除了 node_modules 文件夹和 dist 文件夹
+  */
