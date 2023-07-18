@@ -1,7 +1,6 @@
-import { defineApplication } from '@vfly/vite-config';
+import {defineApplication } from '@vfly/vite-config';
 
 
-export default defineApplication({
-    
-})
 
+
+export default defineApplication();

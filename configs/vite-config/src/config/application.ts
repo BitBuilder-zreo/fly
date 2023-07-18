@@ -1,9 +1,9 @@
 
-interface DefineOptions {
-
+export interface DefineOptions {
+       
 }
 
-function defineApplication(options: DefineOptions) {
+function defineApplication(options: DefineOptions = {}) {
 
 }
 
