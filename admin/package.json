@@ -1,33 +1,32 @@
 {
-    "name": "v-fly",
+    "name": "fly",
     "version": "1.0.0",
     "description": "Vue + Vite + TypeScript ",
-    "keywords": [
-        "v-fly",
-        "vite",
-        "vue",
-        "typescript"
-    ],
     "author": "Gemini",
     "license": "MIT",
     "scripts": {
         "bootstrap": "pnpm install",
-        "dev": "pnpm vite",
+        "dev": "vite",
+        "build": "vite build",
         "postinstall": "turbo run stub"
     },
     "dependencies": {
-        "vue": "^3.3.4"
+        "@types/node": "^20.5.9",
+        "ant-design-vue": "^4.0.2",
+        "vue": "^3.3.4",
+        "vue-router": "^4.2.4"
     },
     "devDependencies": {
-        "@types/node": "^20.4.2",
-        "@vfly/eslint-config": "workspace:*",
-        "@vfly/stylelint-config": "workspace:*",
-        "@vfly/ts-config": "workspace:*",
-        "@vfly/vite-config": "workspace:*",
-        "@vitejs/plugin-vue": "^4.2.3",
-        "turbo": "^1.10.8",
-        "typescript": "^5.1.6",
-        "unbuild": "^1.2.1",
-        "vite": "^4.4.4"
+        "@fly/ts-config": "workspace:*",
+        "@fly/vite-config": "workspace:*",
+        "turbo": "^1.10.13",
+        "typescript": "^5.2.2",
+        "unbuild": "^2.0.0",
+        "vite": "^4.4.9"
+    },
+    "packageManager": "pnpm@8.1.0",
+    "engines": {
+        "node": ">=16.15.0",
+        "pnpm": ">=8.1.0"
     }
 }
