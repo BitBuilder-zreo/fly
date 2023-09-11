@@ -18,7 +18,7 @@
 
 
 # 编辑器特定文件
-/.idea
+**/.idea
 /.DS_Store
 
 
