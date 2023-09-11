@@ -1,14 +1,13 @@
 
-
-# 设置全局API前缀
-
 server:
   servlet:
+    # 设置全局API前缀
     context-path: /fly
 
-
 spring:
-   profiles:
+  profiles:
      # 激活开发环境 dev  生产环境 pro
      active: dev
+  main:
+    banner-mode: off
 

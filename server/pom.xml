@@ -17,11 +17,21 @@
 
     <modules>
         <module>main</module>
+        <module>security</module>
     </modules>
 
 
     <dependencyManagement>
+
+
         <dependencies>
+           <!--自定义模块依赖-->
+            <dependency>
+                <groupId>org.fly</groupId>
+                <artifactId>security</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -55,3 +65,11 @@
 
 
 </project>
+
+
+
+
+
+
+
+

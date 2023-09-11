@@ -5,7 +5,9 @@ server:
     context-path: /fly
 
 spring:
-   profiles:
+  profiles:
      # 激活开发环境 dev  生产环境 pro
      active: dev
+  main:
+    banner-mode: off
 

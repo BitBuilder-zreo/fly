@@ -7,6 +7,6 @@ spring:
     activate:
       on-profile: dev
 
-
 server:
+  # 端口
   port: 8080

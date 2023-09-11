@@ -11,21 +11,15 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>main</artifactId>
-
+    <artifactId>security</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.fly</groupId>
-            <artifactId>security</artifactId>
-        </dependency>
-
     </dependencies>
+
 
 
 
