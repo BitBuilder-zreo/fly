@@ -1,8 +1,11 @@
 
+
+# 设置全局API前缀
+
 server:
   servlet:
-    # 设置全局API前缀
     context-path: /fly
+
 
 spring:
    profiles:
