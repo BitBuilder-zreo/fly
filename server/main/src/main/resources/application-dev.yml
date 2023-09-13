@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://124.220.165.95:3306/bdh?useUnicode=ture&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
     username: fly
-    password: JXp3rEFrzdNwsywP
+    password: JXp3rEFrzdNwsywP124.220.165.95
 
 server:
   # 端口
