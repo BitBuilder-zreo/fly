@@ -1,4 +1,3 @@
-
 server:
   servlet:
     # 设置全局API前缀
@@ -6,8 +5,12 @@ server:
 
 spring:
   profiles:
-     # 激活开发环境 dev  生产环境 pro
-     active: dev
+    # 激活开发环境 dev  生产环境 pro
+    active: dev
   main:
     banner-mode: off
 
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true # date 转时间戳

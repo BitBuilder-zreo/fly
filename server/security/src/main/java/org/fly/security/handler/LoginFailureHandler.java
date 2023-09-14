@@ -1,6 +1,7 @@
-package org.fly.handler;
+package org.fly.security.handler;
 
 import java.io.IOException;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 
 import org.fly.common.response.Code;
 import org.fly.common.response.Response;
@@ -48,7 +49,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
             response.getWriter().write(Response.fail(Code.account_disabled).toJSON());
         } else {
             // 对于其他未处理的异常，返回通用的登录失败错误消息
-            response.getWriter().write(Response.fail(Code.login_error).toJSON());
+            response.getWriter().write(Response.fail(500, exception.getMessage()).toJSON());
         }
     }
 }

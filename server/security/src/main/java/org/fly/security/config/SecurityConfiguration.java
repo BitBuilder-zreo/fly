@@ -1,17 +1,17 @@
-package org.fly.config;
+package org.fly.security.config;
 
 import jakarta.annotation.Resource;
-import org.fly.handler.LoginFailureHandler;
-import org.fly.handler.LoginSuccessHandler;
-import org.fly.auth.UserAuthorizationManager;
-import org.fly.filter.LoginAuthenticationFilter;
-import org.fly.handler.NoAuthAccessDeniedHandler;
+import org.fly.security.handler.LoginFailureHandler;
+import org.fly.security.handler.LoginSuccessHandler;
+import org.fly.security.auth.MyAuthorizationManager;
+import org.fly.security.filter.LoginAuthenticationFilter;
+import org.fly.security.handler.NoAuthAccessDeniedHandler;
 import org.springframework.context.annotation.Bean;
-import org.fly.filter.JWTAuthenticationTokenFilter;
+import org.fly.security.filter.JWTAuthenticationTokenFilter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
@@ -27,7 +27,7 @@ public class SecurityConfiguration {
      * 用户权限控制管理器，处理用户权限控制。
      */
     @Resource
-    UserAuthorizationManager authorizationManager;
+    MyAuthorizationManager authorizationManager;
 
     /**
      * NoAuthAccessDeniedHandler是一个自定义的权限拒绝处理器，
@@ -59,7 +59,9 @@ public class SecurityConfiguration {
         // 这个方法的目的是为了配置Spring Security使用的密码编码器，
         // 以便在用户注册时加密密码，以及在用户登录时验证密码。
 
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        return NoOpPasswordEncoder.getInstance();
+
+//        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
     /**

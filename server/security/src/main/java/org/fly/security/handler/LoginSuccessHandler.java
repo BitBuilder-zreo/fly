@@ -1,9 +1,9 @@
-package org.fly.handler;
+package org.fly.security.handler;
 
 
 import java.util.Map;
 import java.util.HashMap;
-import org.fly.token.JWT;
+import org.fly.security.token.JWT;
 import java.io.IOException;
 import org.fly.common.date.DateUtils;
 import jakarta.servlet.ServletException;
@@ -47,7 +47,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         data.put("refreshToken", token);
 
         // 假设在30天后令牌过期，生成并添加到数据映射中
-        data.put("expires", DateUtils.format(DateUtils.addDay(30)));
+        data.put("expires", DateUtils.timestamp(DateUtils.addDay(30)).toString());
 
         // 将数据映射转换为JSON格式并写入响应
         response.getWriter().write(Response.success(data).toJSON());
