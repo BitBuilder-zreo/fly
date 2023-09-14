@@ -26,7 +26,7 @@
 
 
         <dependencies>
-           <!--自定义模块依赖-->
+            <!--自定义模块依赖-->
             <dependency>
                 <groupId>org.fly</groupId>
                 <artifactId>security</artifactId>
@@ -55,12 +55,6 @@
                 <groupId>com.mybatis-flex</groupId>
                 <artifactId>mybatis-flex-spring-boot-starter</artifactId>
                 <version>1.6.5</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mybatis-flex</groupId>
-                <artifactId>mybatis-flex-processor</artifactId>
-                <version>1.6.5</version>
-                <scope>provided</scope>
             </dependency>
 
             <dependency>
