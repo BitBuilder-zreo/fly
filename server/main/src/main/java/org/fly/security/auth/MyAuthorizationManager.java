@@ -3,9 +3,9 @@ package org.fly.security.auth;
 import java.util.function.Supplier;
 
 import jakarta.annotation.Resource;
-import org.fly.security.config.Matcher;
-import org.fly.security.service.AuthMapper;
-import org.fly.security.service.User;
+import org.fly.config.Matcher;
+import org.fly.mapper.AuthMapper;
+import org.fly.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.access.AccessDeniedException;

@@ -2,7 +2,7 @@ package org.fly.controller;
 
 import jakarta.annotation.Resource;
 import org.fly.common.response.Response;
-import org.fly.security.service.User;
+import org.fly.entity.User;
 import org.fly.security.token.JWT;
 import org.fly.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;

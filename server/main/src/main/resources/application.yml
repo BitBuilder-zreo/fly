@@ -14,3 +14,7 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: true # date 转时间戳
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql

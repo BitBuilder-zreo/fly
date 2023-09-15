@@ -16,12 +16,12 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 /**
  * 由于SpringSecurity的登录只能是表单形式 并且用户名密码需要时username、password,AbstractAuthenticationProcessingFilter 获取登录请求的参数
  * 再去设置到UsernamePasswordAuthenticationToken中 来改变请求传参方式、参数名等 或者也可以在登录的时候加入其他参数等等
- *
+ * <p>
  * 也可以在这里添加验证码、短信等的验证
  */
 public class LoginAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
-    private static final AntPathRequestMatcher DEFAULT_ANT_PATH_REQUEST_MATCHER = new AntPathRequestMatcher("/login", "POST");
+    private static final AntPathRequestMatcher DEFAULT_ANT_PATH_REQUEST_MATCHER = new AntPathRequestMatcher("/auth/login", "POST");
     private String accountParameter = "account";
     private String passwordParameter = "password";
     private boolean postOnly = true;

@@ -1,7 +1,7 @@
 package org.fly.service;
 
 import com.mybatisflex.core.service.IService;
-import org.fly.security.service.User;
+import org.fly.entity.User;
 
 public interface UserService extends IService<User> {
 

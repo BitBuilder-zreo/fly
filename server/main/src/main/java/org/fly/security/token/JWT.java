@@ -5,10 +5,9 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.fly.security.auth.JWTAuthentication;
-import org.fly.security.service.User;
+import org.fly.entity.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.Date;

@@ -1,18 +1,20 @@
-package org.fly.security.service;
+package org.fly.entity;
+
+
+import com.mybatisflex.annotation.*;
+import com.mybatisflex.core.mask.Masks;
+import lombok.Data;
+
+import java.util.Date;
+import java.util.Collection;
+import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mybatisflex.annotation.Column;
-import com.mybatisflex.annotation.Id;
-import com.mybatisflex.annotation.KeyType;
-import com.mybatisflex.annotation.Table;
-import lombok.Data;
+import org.fly.enums.Gender;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 
 @Data
 @Table("sys_user")
@@ -41,7 +43,13 @@ public class User implements Serializable, UserDetails {
     /**
      * 手机号码
      */
+    @ColumnMask(Masks.MOBILE)
     private String mobile;
+
+    /**
+     * 默认头像
+     */
+    private String avatar;
 
     /**
      * 邮箱
@@ -51,7 +59,7 @@ public class User implements Serializable, UserDetails {
     /**
      * 性别 默认0 未知 1 男 2 女
      */
-    private Integer gender;
+    private Gender gender;
 
     /**
      * 密码
@@ -63,6 +71,10 @@ public class User implements Serializable, UserDetails {
      * 是否启用 默认启用
      */
     private boolean enabled;
+
+    @JsonIgnore
+    @Column(isLogicDelete = true)
+    private Integer del;
 
     /**
      * 创建时间

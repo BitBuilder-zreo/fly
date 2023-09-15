@@ -1,6 +1,6 @@
 package org.fly.security.auth;
 
-import org.fly.security.service.User;
+import org.fly.entity.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

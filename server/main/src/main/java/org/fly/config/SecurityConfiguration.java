@@ -1,4 +1,4 @@
-package org.fly.security.config;
+package org.fly.config;
 
 import jakarta.annotation.Resource;
 import org.fly.security.handler.LoginFailureHandler;

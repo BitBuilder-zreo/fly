@@ -1,4 +1,4 @@
-package org.fly.security.config;
+package org.fly.config;
 
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 

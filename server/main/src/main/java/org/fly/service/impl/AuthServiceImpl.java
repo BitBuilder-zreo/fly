@@ -1,6 +1,8 @@
-package org.fly.security.service;
+package org.fly.service.impl;
 
-import com.mybatisflex.core.query.QueryWrapper;
+import org.fly.entity.User;
+import org.fly.mapper.AuthMapper;
+import org.fly.service.AuthService;
 import org.springframework.stereotype.Component;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
 import org.springframework.security.core.userdetails.UserDetails;
