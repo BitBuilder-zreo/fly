@@ -1,16 +1,10 @@
-import { App } from "vue";
+import type { App } from 'vue';
+import { createPinia } from 'pinia';
 
-import { createPinia } from 'pinia'
+const store = createPinia();
 
-/**
- * 全局唯一存储类
- */
-export const store = createPinia();
-
-/**
- * 设置存储
- * @param app 
- */
-export function setupStore(app: App) {
-    app.use(store)
+export function setupStore(app: App<Element>) {
+  app.use(store);
 }
+
+export { store };
