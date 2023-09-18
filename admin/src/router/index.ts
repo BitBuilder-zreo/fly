@@ -1,53 +1,26 @@
+// 引入 Vue Router 相关的类型和函数
 import type { RouteRecordRaw } from 'vue-router';
-import type { App } from 'vue';
-
+import { App } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
-// import { basicRoutes } from './routes';
+import { basicRoutes } from './routes';
+export * from '/@/router/guard'
 
-// // 白名单应该包含基本静态路由
- const WHITE_NAME_LIST: string[] = [];
-// const getRouteNames = (array: any[]) =>
-//   array.forEach((item) => {
-//     WHITE_NAME_LIST.push(item.name);
-//     getRouteNames(item.children || []);
-//   });
-// getRouteNames(basicRoutes);
-
-// app router
 // 创建一个可以被 Vue 应用程序使用的路由实例
-// export const router = createRouter({
-//   // 创建一个 hash 历史记录。
-//   history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
-//   // 应该添加到路由的初始路由列表。
-//   routes: basicRoutes as unknown as RouteRecordRaw[],
-//   // 是否应该禁止尾部斜杠。默认为假
-//   strict: true,
-//   scrollBehavior: () => ({ left: 0, top: 0 }),
-// });
-
-
 export const router = createRouter({
-  // 创建一个 hash 历史记录。
-  history: createWebHashHistory(),
-  // 应该添加到路由的初始路由列表。
-  routes: [],
+  // 创建一个 hash 历史记录，用于路由导航
+  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
+  // 路由的初始配置，使用基本路由
+  routes: basicRoutes as unknown as RouteRecordRaw[],
   // 是否应该禁止尾部斜杠。默认为假
   strict: true,
-  scrollBehavior: () => ({ left: 0, top: 0 }),
+  // 定义滚动行为，每次路由切换后将页面滚动到顶部
+  scrollBehavior: () => ({ left: 0, top: 0 })
 });
 
-// reset router
-export function resetRouter() {
-  router.getRoutes().forEach((route) => {
-    const { name } = route;
-    if (name && !WHITE_NAME_LIST.includes(name as string)) {
-      router.hasRoute(name) && router.removeRoute(name);
-    }
-  });
-}
 
-// config router
+
 // 配置路由器
+// 将路由实例注册到应用中
 export function setupRouter(app: App<Element>) {
   app.use(router);
 }

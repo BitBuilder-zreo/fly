@@ -1,5 +1,5 @@
-// 引入 Vue 应用的 App 类型
-import type { App } from 'vue';
+// 引入 Vue 3 的 App 类型
+import { App } from 'vue';
 
 // 引入 Pinia 的 createPinia 函数
 import { createPinia } from 'pinia';

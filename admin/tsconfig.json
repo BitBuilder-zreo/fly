@@ -9,7 +9,10 @@
       "/#/*": ["types/*"],
       "@/*": ["src/*"],
       "#/*": ["types/*"]
-    }
+    },
+    "types": [
+      "vite/client"
+    ]
   },
   "include": [
     "tests/**/*.ts",
