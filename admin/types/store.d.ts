@@ -30,15 +30,24 @@ export interface ErrorLogInfo {
   time?: string;
 }
 
-export interface UserInfo {
+export interface User {
   userId: string | number;
   username: string;
   realName: string;
   avatar: string;
   desc?: string;
-  homePath?: string;
-  roles: RoleInfo[];
 }
+
+export interface Token {
+  // Token
+  token: string;
+  // Refresh token
+  refreshToken: string;
+  // Token expiration time
+  expireTime: number;
+
+}
+
 
 export interface BeforeMiniState {
   menuCollapsed?: boolean;

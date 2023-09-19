@@ -3,25 +3,21 @@ import type { EncryptionParams } from '/@/utils/cipher';
 import { AesEncryption } from '/@/utils/cipher';
 import { isNullOrUnDef } from '/@/utils/is';
 
-// 创建存储实例所需的参数
 export interface CreateStorageParams extends EncryptionParams {
-  prefixKey: string; // 存储键的前缀
-  storage: Storage; // 存储引擎，例如 sessionStorage 或 localStorage
-  hasEncrypt: boolean; // 是否启用数据加密
-  timeout?: Nullable<number>; // 缓存超时时间
+  prefixKey: string;
+  storage: Storage;
+  hasEncrypt: boolean;
+  timeout?: Nullable<number>;
 }
-
-// 创建存储实例的函数
 export const createStorage = ({
-  prefixKey = '', // 默认前缀为空
-  storage = sessionStorage, // 默认存储引擎为 sessionStorage
-  key = cacheCipher.key, // 默认密钥
-  iv = cacheCipher.iv, // 默认初始化向量
-  timeout = null, // 默认超时时间为空
-  hasEncrypt = true, // 默认启用数据加密
+  prefixKey = '',
+  storage = sessionStorage,
+  key = cacheCipher.key,
+  iv = cacheCipher.iv,
+  timeout = null,
+  hasEncrypt = true,
 }: Partial<CreateStorageParams> = {}) => {
   if (hasEncrypt && [key.length, iv.length].some((item) => item !== 16)) {
-    // 如果启用加密且密钥和初始化向量长度不为16，抛出错误
     throw new Error('When hasEncrypt is true, the key or iv must be 16 bits!');
   }
 
@@ -29,15 +25,15 @@ export const createStorage = ({
 
   /**
    * Cache class
-   * 可以传递构造参数到 sessionStorage 或 localStorage 的缓存类
+   * Construction parameters can be passed into sessionStorage, localStorage,
    * @class Cache
    * @example
    */
   const WebStorage = class WebStorage {
-    private storage: Storage; // 存储引擎
-    private prefixKey?: string; // 存储键前缀
-    private encryption: AesEncryption; // 加密实例
-    private hasEncrypt: boolean; // 是否启用加密
+    private storage: Storage;
+    private prefixKey?: string;
+    private encryption: AesEncryption;
+    private hasEncrypt: boolean;
     /**
      *
      * @param {*} storage
@@ -49,16 +45,15 @@ export const createStorage = ({
       this.hasEncrypt = hasEncrypt;
     }
 
-    // 获取存储键
     private getKey(key: string) {
       return `${this.prefixKey}${key}`.toUpperCase();
     }
 
     /**
-     * 设置缓存
+     * Set cache
      * @param {string} key
      * @param {*} value
-     * @param {*} expire 过期时间（秒）
+     * @param {*} expire Expiration time in seconds
      * @memberof Cache
      */
     set(key: string, value: any, expire: number | null = timeout) {
@@ -74,9 +69,9 @@ export const createStorage = ({
     }
 
     /**
-     * 读取缓存
+     * Read cache
      * @param {string} key
-     * @param {*} def 默认值
+     * @param {*} def
      * @memberof Cache
      */
     get(key: string, def: any = null): any {
@@ -97,7 +92,7 @@ export const createStorage = ({
     }
 
     /**
-     * 根据键删除缓存
+     * Delete cache based on key
      * @param {string} key
      * @memberof Cache
      */
@@ -106,7 +101,7 @@ export const createStorage = ({
     }
 
     /**
-     * 清空此实例的所有缓存
+     * Delete all caches of this instance
      */
     clear(): void {
       this.storage.clear();
