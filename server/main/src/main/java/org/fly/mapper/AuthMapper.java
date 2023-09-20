@@ -12,7 +12,7 @@ public interface AuthMapper extends BaseMapper<User> {
 
         QueryWrapper wrapper = QueryWrapper.create();
 
-        wrapper.where("mobile=?", username);
+        wrapper.where("username=? or mobile=?", username, username);
 
         return selectOneByQuery(wrapper);
     }
