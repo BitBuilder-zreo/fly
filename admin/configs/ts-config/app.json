@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    // 作用：指定显示名称，可能用于IDE或工具中的显示。
+    "display": "Vue Application",
+    // 作用：扩展另一个tsconfig.json文件，继承其配置选项。
+    "extends": "./base.json",
+    "compilerOptions": {
+        // 作用：指定JSX代码的处理方式。
+        // 注释：此处设置为"preserve"，表示将保留JSX代码而不进行编译转换。
+        "jsx": "preserve",
+        // 作用：指定编译时可以使用的库。
+        // 注释：在此设置中，包括了ESNext和DOM库，以便在代码中使用相关功能。
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        // 作用：是否启用"noImplicitAny"选项。
+        // 注释：在此设置中，"noImplicitAny"设置为false，允许使用隐式的any类型。
+        "noImplicitAny": false
+    }
+}

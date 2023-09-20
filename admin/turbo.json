@@ -1,0 +1,32 @@
+{
+    "$schema": "https://turborepo.org/schema.json",
+    // 作用：定义了一系列的构建流水线任务。
+    "pipeline": {
+        "build": {
+            // 作用：指定此任务的依赖项。
+            // 注释：这里依赖于"^build"，意味着它将在所有名称以"build"开头的任务之后运行。
+            "dependsOn": [
+                "^build"
+            ],
+            // 作用：指定此任务的输出文件或文件夹。
+            // 注释：这里输出包含所有在"dist"目录下的文件和子目录。
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        // 作用：定义了一个名为"stub"的任务。
+        "stub": {},
+        // 作用：配置清理任务。
+        "clean": {
+            // 注释：这里设置了"cache"为false，表示不使用缓存来执行清理操作。
+            "cache": false
+        },
+        "dev": {
+            // 作用：配置开发任务。
+            // 注释：这里设置了"cache"为false，表示不使用缓存来执行开发任务；
+            // "persistent"设置为true，表示保持持久性以使开发任务持续运行。
+            "cache": false,
+            "persistent": true
+        }
+    }
+}

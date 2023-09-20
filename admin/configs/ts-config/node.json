@@ -1,0 +1,27 @@
+{
+    // 作用：指定用于验证此tsconfig.json文件的JSON模式的URL。
+    "$schema": "https://json.schemastore.org/tsconfig",
+    // 作用：指定显示名称，可能用于IDE或工具中的显示。
+    "display": "Node Config",
+    // 作用：继承自另一个tsconfig.json文件的配置选项。
+    "extends": "./base.json",
+    "compilerOptions": {
+        // 作用：指定编译时可访问的库。
+        // 注释：在此设置中，包括了ESNext库，以便在代码中使用相关功能。
+        "lib": [
+            "ESNext"
+        ],
+        // 作用：是否启用"noImplicitAny"选项。
+        // 注释：在此设置中，"noImplicitAny"设置为true，禁止使用隐式的any类型。
+        "noImplicitAny": true,
+        // 作用：是否生成源映射文件。
+        // 注释：在此设置中，生成了源映射文件，有助于在调试时跟踪源代码。
+        "sourceMap": true,
+        // 作用：是否在编译时生成输出文件。
+        // 注释：在此设置中，禁止生成输出文件，适用于只进行类型检查而不生成实际输出的情况。
+        "noEmit": true,
+        // 作用：指定基本URL路径，用于解析非相对模块导入。
+        // 注释：在此设置中，基本URL路径设置为当前目录。
+        "baseUrl": "./"
+    }
+}

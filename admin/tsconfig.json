@@ -1,0 +1,58 @@
+{
+  // 作用：指定用于验证此tsconfig.json文件的JSON模式的URL。
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // 作用：继承自另一个tsconfig.json文件的配置选项。
+  "extends": "@fly/ts-config/app.json",
+  "compilerOptions": {
+    // 作用：设置基本URL路径，用于解析非相对模块导入。
+    // 注释：在此设置中，基本URL路径设置为当前目录。
+    "baseUrl": ".",
+    // 作用：是否生成声明文件（.d.ts）。
+    // 注释：在此设置中，声明文件生成被禁用，设置为false。
+    "declaration": false,
+    // 作用：指定要包含的类型声明文件。
+    // 注释：在此设置中，包含了一个名为"vite/client"的类型声明文件。
+    "types": [
+      "vite/client"
+    ],
+    // 作用：配置模块导入路径别名。
+    // 注释：这里定义了一系列别名，例如"/@/*"表示将"/@/"路径映射到"src/*"，以便更方便地导入模块。
+    "paths": {
+      "/@/*": [
+        "src/*"
+      ],
+      "/#/*": [
+        "types/*"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "#/*": [
+        "types/*"
+      ]
+    }
+  },
+  // 作用：指定要包括在编译中的文件和文件夹。
+  // 注释：在此设置中，列出了要包括的各种文件和文件夹的通配符模式。
+  "include": [
+    "tests/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "mock/**/*.ts",
+    "vite.config.ts"
+  ],
+  // 作用：指定要排除在编译之外的文件和文件夹。
+  // 注释：在此设置中，列出了要排除的各种文件和文件夹的通配符模式。
+  "exclude": [
+    "node_modules",
+    "tests/server/**/*.ts",
+    "dist",
+    "**/*.js"
+  ]
+}

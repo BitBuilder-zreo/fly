@@ -1,0 +1,70 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Base",
+    "compilerOptions": {
+        // 作用：指定编译后的JavaScript目标版本。
+        // 注释：此设置将编译成支持最新ECMAScript规范的JavaScript代码。
+        "target": "ESNext",
+        // 作用：指定生成的模块系统。
+        // 注释：此设置将生成符合最新ECMAScript模块规范的模块系统。
+        "module": "ESNext",
+        // 作用：指定模块解析策略。
+        // 注释：使用Node.js的模块解析策略来查找和加载模块。
+        "moduleResolution": "node",
+        // 作用：启用严格的类型检查。
+        // 注释：开启此选项后，TypeScript将执行更严格的类型检查，有助于捕获潜在的错误。
+        "strict": true,
+        // 作用：生成声明文件（.d.ts）。
+        // 注释：启用后，编译器将为你的TypeScript文件生成相应的声明文件，用于类型检查和类型提示。
+        "declaration": true,
+        // 作用：禁止隐式的方法覆盖。
+        // 注释：开启此选项后，编译器会强制要求明确声明方法覆盖，防止错误的覆盖行为。
+        "noImplicitOverride": true,
+        // 作用：检测未使用的局部变量。
+        // 注释：开启后，编译器会报告未使用的局部变量，有助于代码质量和维护。
+        "noUnusedLocals": true,
+        // 作用：简化CommonJS和ES模块之间的互操作性。
+        // 注释：使得在导入CommonJS模块时，可以像导入ES模块一样使用`import`语法。
+        "esModuleInterop": true,
+        // 作用：控制`catch`子句中的异常参数类型。
+        // 注释：设置为false时，异常参数的类型将被推断为`any`，可以根据需要将其更改为`unknown`以增加类型安全性。
+        "useUnknownInCatchVariables": false,
+        // 作用：启用项目合成。
+        // 注释：项目合成用于加速大型TypeScript项目的构建，但在小型项目中可能不需要。
+        "composite": false,
+        // 作用：生成声明文件的映射文件。
+        // 注释：设置为false时，编译器将不生成声明文件的映射文件。
+        "declarationMap": false,
+        // 作用：强制文件名大小写一致性。
+        // 注释：开启后，编译器会强制要求文件名的大小写与导入语句中的大小写一致。
+        "forceConsistentCasingInFileNames": true,
+        // 作用：在生成的JavaScript文件中包含源映射。
+        // 注释：设置为false时，源映射将生成为单独的文件而不是内联到JavaScript文件中。
+        "inlineSources": false,
+        // 作用：将每个文件视为独立的模块。
+        // 注释：开启后，每个TypeScript文件都将被视为独立的模块，而不是一个整体项目。
+        "isolatedModules": true,
+        // 作用：跳过对声明文件的检查。
+        // 注释：设置为true时，编译器将跳过对声明文件的类型检查，可以加快编译速度。
+        "skipLibCheck": true,
+        // 作用：检测未使用的函数参数。
+        // 注释：开启后，编译器会报告未使用的函数参数，有助于代码质量和维护。
+        "noUnusedParameters": false,
+        // 作用：保留监视模式下的输出文件。
+        // 注释：设置为true时，编译器将保留监视模式下生成的输出文件，而不会删除它们。
+        "preserveWatchOutput": true,
+        // 作用：启用实验性装饰器支持。
+        // 注释：开启后，允许在类和方法上使用实验性装饰器。
+        "experimentalDecorators": true,
+        // 作用：启用JSON模块解析。
+        // 注释：允许直接导入JSON文件并将其视为模块。
+        "resolveJsonModule": true,
+        // 作用：移除生成的JavaScript中的注释。
+        // 注释：设置为true时，编译器将从生成的JavaScript中移除注释，以减小文件大小。
+        "removeComments": true
+    },
+    "exclude": [
+        "**/node_modules/**",
+        "**/dist/**"
+    ]
+}
