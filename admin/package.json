@@ -12,10 +12,11 @@
     "lint:stylelint": "stylelint \"**/*.{vue,css,less,scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/"
   },
   "devDependencies": {
-    "@fly/ts-config": "workspace:*",
-    "@fly/vite-config": "workspace:*",
     "@fly/eslint-config": "workspace:*",
     "@fly/stylelint-config": "workspace:*",
+    "@fly/ts-config": "workspace:*",
+    "@fly/vite-config": "workspace:*",
+    "ant-design-vue": "^4.0.3",
     "crypto-ts": "^1.0.2",
     "dayjs": "^1.11.10",
     "pkg-types": "^1.0.3",
