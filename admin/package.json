@@ -5,15 +5,26 @@
   "scripts": {
     "bootstrap": "pnpm install",
     "dev": "vite",
-    "postinstall": "turbo run stub"
+    "postinstall": "turbo run stub",
+    "lint": "turbo run lint",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write .",
+    "lint:stylelint": "stylelint \"**/*.{vue,css,less,scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/"
   },
   "devDependencies": {
     "@fly/ts-config": "workspace:*",
     "@fly/vite-config": "workspace:*",
+    "@fly/eslint-config": "workspace:*",
+    "@fly/stylelint-config": "workspace:*",
+    "crypto-ts": "^1.0.2",
+    "dayjs": "^1.11.10",
+    "pkg-types": "^1.0.3",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
-    "vite": "^4.4.9"
+    "unocss": "^0.56.0",
+    "vite": "^4.4.9",
+    "vite-plugin-html": "^3.2.0"
   },
   "packageManager": "pnpm@8.1.0",
   "engines": {
@@ -21,6 +32,7 @@
     "pnpm": ">=8.1.0"
   },
   "dependencies": {
+    "pinia": "^2.1.6",
     "vue": "^3.3.4"
   }
 }
