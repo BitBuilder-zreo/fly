@@ -1,11 +1,11 @@
 <template>
-    <div>
-        12321wdadweqweqw
-    </div>
+    <ConfigProvider>
+        <RouterView />
+    </ConfigProvider>
 </template>
 
 <script setup lang="ts">
+import { ConfigProvider } from 'ant-design-vue';
 
 </script>
 
-<style scoped></style>

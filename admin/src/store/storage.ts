@@ -1,6 +1,11 @@
 import { AES, enc } from 'crypto-ts'
 
-const KEY = 'FLY';
+const KEY = 'Fly';
+
+export const AUTHORIZE_KEY = 'AUTHORIZE__';
+
+export const USER_INFO_KEY = 'USER_INFO__';
+
 
 // 加密函数
 function encrypt(data: string): string {
@@ -26,7 +31,7 @@ class WebStore {
      * @param key 
      * @returns 数据
      */
-    data<T>(key: string): T | null {
+    data<T>(key: string) {
 
         try {
             const encryptData = localStorage.getItem(key);
@@ -40,7 +45,7 @@ class WebStore {
             if (data === null) {
                 return null;
             }
-            return JSON.parse(data);
+            return JSON.parse(data) as Nullable<T>;
         } catch (error) {
 
             return null;
